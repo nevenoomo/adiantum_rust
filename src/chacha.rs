@@ -5,6 +5,7 @@
 use std::cmp;
 use std::ops::{Add, AddAssign};
 
+#[allow(non_camel_case_types)]
 type u32x4 = [u32; 4];
 const CHACHA_CONST_HEADER: u32x4 = [0x61707865, 0x3320646e, 0x79622d32, 0x6b206574];
 
@@ -59,6 +60,7 @@ struct ChaChaState {
     d: u32x4,
 }
 
+#[allow(dead_code)]
 impl ChaChaState {
     pub fn new() -> Self {
         ChaChaState {
@@ -197,6 +199,7 @@ impl AddAssign for ChaChaState {
     }
 }
 
+#[allow(non_snake_case)]
 pub struct ChaCha {
     NROUNDS: usize,
     state: ChaChaState,
